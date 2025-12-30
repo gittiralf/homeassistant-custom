@@ -1,0 +1,17 @@
+version: '3'
+services:
+  homeassistant:
+    container_name: homeassistant
+
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    volumes:
+      - /share/CACHEDEV1_DATA/Container/homeassistant:/config
+      - /etc/localtime:/etc/localtime:ro
+      - /share/CACHEDEV1_DATA/Paperless-ngx/consume:/consume
+
+    restart: unless-stopped
+    privileged: true
+    network_mode: host
