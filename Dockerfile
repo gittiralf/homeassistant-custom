@@ -1,4 +1,4 @@
-FROM ghcr.io/home-assistant/home-assistant:stable
-RUN pip install --no-cache-dir mysql-connector-python
+FROM ghcr.io/home-assistant/home-assistant:latest
+RUN pip install mysql-connector-python
 
 
