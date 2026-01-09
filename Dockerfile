@@ -1,2 +1,2 @@
-FROM ghcr.io/home-assistant/home-assistant:latest
+FROM ghcr.io/home-assistant/home-assistant:stable
 RUN pip install mysql-connector-python
