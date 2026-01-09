@@ -1,2 +1,4 @@
 FROM ghcr.io/home-assistant/home-assistant:stable
-RUN pip install mysql-connector-python
+
+# MySQL-Unterstützung für Recorder, History, etc.
+RUN pip install mysqlclient
