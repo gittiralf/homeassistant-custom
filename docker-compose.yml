@@ -1,17 +1,12 @@
-version: '3'
+version: "3.9"
+
 services:
   homeassistant:
-    container_name: homeassistant
-
-    build:
-      context: .
-      dockerfile: Dockerfile
-
-    volumes:
-      - /share/CACHEDEV1_DATA/Container/homeassistant:/config
-      - /etc/localtime:/etc/localtime:ro
-      - /share/CACHEDEV1_DATA/Paperless-ngx/consume:/consume
-
+    image: ghcr.io/gittiralf/homeassistant-custom:latest
+    container_name: homeassistant-custom
     restart: unless-stopped
-    privileged: true
     network_mode: host
+    volumes:
+      - ./config:/config
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
